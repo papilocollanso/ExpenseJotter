@@ -3,6 +3,7 @@ import Expenses from './components/Expenses/Expenses';
 import './App.css';
 import NewExpense from './components/NewExpense/NewExpense';
 
+
 const DUMMY_EXPENSES = [
     {
       id: 'e1',
@@ -31,17 +32,21 @@ const DUMMY_EXPENSES = [
 const  App = () => {
 
   const [expenses,setExpenses] = useState(DUMMY_EXPENSES);
-
+ 
+   
   const addExpense = expense =>{
           setExpenses(prevExpenses => {
             return[expense, ...prevExpenses];
           });
 
   };
+ const deleteHandler = expenseId => {
+   setExpenses(prevExpenses => prevExpenses.filter(expense => expense.id !== expenseId)2);
+ };
   return (
     <div>
     <h2><NewExpense  onAddExpense={addExpense}/></h2>
-    <Expenses items = {expenses}/>
+       <Expenses items = {expenses} deleteItem ={ deleteHandler }/>
 
     </div>
   );
