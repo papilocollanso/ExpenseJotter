@@ -1,6 +1,6 @@
 
 # ExpenseJotter
-*A react web app for detailing expenses made*
+*A react web app for detailing expenses made.*
 
 
 # Getting Started with Create React App
